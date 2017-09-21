@@ -1,0 +1,32 @@
+#google-wrapper{
+	text-align: center;
+	height: 100vh;
+	position: relative;
+}
+
+
+ul,ol{
+	list-style:  none;
+
+}
+
+
+#footer{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+}
+#header{
+	text-align: right;
+}
+.menu-item{
+	display: inline-block;
+}
+.footer-right{
+	text-align: right;
+
+}
+.footer-left{
+	text-align: left;
+}

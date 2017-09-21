@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS PRACTICE</title>
+
+	<style>
+
+	#container{
+		/* shrink donw the size from 100% */
+		width:  80%;
+		/* Center it inside it's parent (margin equal on both sides) */
+		margin: auto;
+		/* make the background color easier to see */
+		background-color: black;
+		/* make text visible against black */
+		color: red;
+	}
+
+
+	/* A comma in css is like an OR statement */
+	#the-block, #the-block-2{
+		width: 48%;
+		display: inline-block;
+		background-color: purple;
+	}
+
+	/* A space is a nested AND statement. It means, find something with id of "the-block" */
+	/* INSIDE something with an id of "container" */
+	#container #the-block{
+
+	}
+
+	/* No space and no comma, is like and AND statement. The thing must have both */
+	/* (class of one AND class of big) */
+	.one.big{
+
+	}
+
+	.i-am-inline{
+		background-color: green;
+		width: 100px; /* will be ignored */
+		margin-top: 1000px; /* will be ignored */
+		margin-left: 10px; /* will be honored */
+	}
+
+	.meme-holder{
+		width: 300px;
+		border: 2px solid red;
+	}/* 
+	space = img tags INSIDE of things
+	with a class of meme-holder */
+	.meme-holder img{
+		max-width: 100%;
+	}
+
+	.meme-holder.hide{
+		/* display: none; */
+		visibility: hidden;
+	}
+
+
+/* 	#the-block-2{
+		width: 49%;
+		display: inline-block;	
+	} */
+
+
+	</style>
+</head>
+<body>
+
+	<div class="meme-holder">
+		<img src="https://slack-imgs.com/?c=1&url=http%3A%2F%2Fstarecat.com%2Fcontent%2Fwp-content%2Fuploads%2Ftwo-states-of-every-programmer-i-am-god-i-have-no-idea-what-im-doing.jpg">
+	</div>
+	<div class="meme-holder hide">
+		<img src="https://slack-imgs.com/?c=1&url=http%3A%2F%2Fstarecat.com%2Fcontent%2Fwp-content%2Fuploads%2Ftwo-states-of-every-programmer-i-am-god-i-have-no-idea-what-im-doing.jpg">
+	</div>
+	<div class="meme-holder">
+		<img src="https://slack-imgs.com/?c=1&url=http%3A%2F%2Fstarecat.com%2Fcontent%2Fwp-content%2Fuploads%2Ftwo-states-of-every-programmer-i-am-god-i-have-no-idea-what-im-doing.jpg">
+	</div>
+
+	<!-- Block Elements -->
+<!-- 
+	1. A block level element by default, takes up all the space
+	to the right and to the left possible, internal to it's parent
+	2. It CAN have a height and a width
+	3. NOTHING can ever be on either side (internal to the parent) because
+	it's 100%. If you change the width, it will just add margin. Blocks will
+	ignore margin you add, because they are 100%.
+	4. If you change the size, it will still take up 100% (at least), but the rest outside 
+	of the width, will just be more margin. -->
+
+	<div id="container">
+		<div id="the-block" class="one big">
+			some text in a block.some text in a block.
+			some text in a block.some text in a block.
+			some text in a block.some text in a block.
+			some text in a block.some text in a block.
+			some text in a block.some text in a block.
+			some text in a block.some text in a block.
+			some text in a block.some text in a block.
+			some text in a block.some text in a block.
+			some text in a block.some text in a block.
+			some text in a block.some text in a block.
+			some text in a block.some text in a block.
+		</div>
+		<div id="the-block-2" class="two big">
+			some more text in another block
+
+		</div>
+<!-- 
+		Inline Elements
+		1. Respect left and right padding, left and right margin but will
+		ignore top and bottom
+		2. COuldn't care less what is left or right
+		3. With a few exceptions (namely images) you CANNOT tell an inline
+		element how big to be
+		4. Will happily ignore all block level rules unless forced to do so -->
+<!-- 
+		Inline Block
+		1. Can have stuff on either side (inline positive)
+		2. Can have height/width (block positive)
+		3. Can have top/bottom padding/margin (block positive) -->
+
+		<span class="i-am-inline">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</span>
+
+</body>
+</html>
